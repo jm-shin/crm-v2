@@ -26,25 +26,27 @@ module.exports = class PromotionInfo extends Sequelize.Model {
             },
             condition_json: {
                 type: Sequelize.TEXT,
-                default: null,
+                defaultValue: null,
                 allowNull: true,
             },
             progress_state: {
                 type: Sequelize.INTEGER.UNSIGNED,
-                default: 0,
+                defaultValue: 0,
                 allowNull: false,
             },
             valid_state: {
                 type: Sequelize.INTEGER.UNSIGNED,
-                default: 1,
+                defaultValue: 1,
             },
             created_at: {
-                type: Sequelize.DATEONLY,
-                default: Sequelize.NOW,
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW,
             },
             updated_at: {
-                type: Sequelize.DATEONLY,
-                default: Sequelize.NOW,
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW,
             },
         }, {
             sequelize,

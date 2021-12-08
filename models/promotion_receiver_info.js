@@ -15,7 +15,7 @@ module.exports = class PromotionReceiverInfo extends Sequelize.Model {
             },
             description: {
                 type: Sequelize.TEXT,
-                default: null,
+                defaultValue: null,
             },
             user_idx: {
                 type: Sequelize.BIGINT(),
@@ -23,12 +23,12 @@ module.exports = class PromotionReceiverInfo extends Sequelize.Model {
             },
             collect_type: {
                 type: Sequelize.INTEGER().UNSIGNED,
-                default: 0,
+                defaultValue: 0,
                 allowNull: false,
             },
             group_no: {
                 type: Sequelize.BIGINT(),
-                default: 0,
+                defaultValue: 0,
                 allowNull: false,
             },
             condition_text: {
@@ -41,16 +41,18 @@ module.exports = class PromotionReceiverInfo extends Sequelize.Model {
             },
             valid_state: {
                 type: Sequelize.INTEGER().UNSIGNED,
-                default: 1,
+                defaultValue: 1,
                 allowNull: false,
             },
             created_at: {
-                type: Sequelize.DATEONLY,
-                default: Sequelize.NOW,
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW,
             },
             updated_at: {
-                type: Sequelize.DATEONLY,
-                default: Sequelize.NOW,
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW,
             }
         },{
             sequelize,

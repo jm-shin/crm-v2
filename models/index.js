@@ -11,16 +11,19 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 
 db.sequelize = sequelize; //db 객체 재사용을 위해 설정
 
+//db
 db.User = User;
 db.PromotionInfo = PromotionInfo;
 db.PromotionReceiverInfo = PromotionReceiverInfo;
 
+//init
 User.init(sequelize);
 PromotionInfo.init(sequelize);
 PromotionReceiverInfo.init(sequelize);
 
+//associate
 User.associate(db);
 PromotionInfo.associate(db);
 PromotionReceiverInfo.associate(db);
 
-export default db;
+module.exports = db;
